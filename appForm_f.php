@@ -2,7 +2,7 @@
 // php script to process appForm.html form
 
 $name  = $_POST['name'];
-$ssn   = $_POST['ssn'];
+$eid   = $_POST['eid'];
 
 ?>
 
@@ -12,7 +12,7 @@ $ssn   = $_POST['ssn'];
 <H2>Thank you for submitting your application.</H2>
 
 Your name :  <?php echo $name; ?><BR />
-Your Employee SSN:  <?php echo $ssn; ?><BR />
+Your Employee ID:  <?php echo $eid; ?><BR />
 <BR />
 
 Comment: <BR />
