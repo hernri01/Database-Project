@@ -4,6 +4,8 @@
 $name  = $_POST['name'];
 $eid   = $_POST['eid'];
 
+echo $name;
+
 ?>
 
 <HTML>
