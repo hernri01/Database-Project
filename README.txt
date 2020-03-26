@@ -2,9 +2,14 @@ Ricardo Hernandez
 Cameron Burns 
 Orrin Wilson
 
-Timeline and Functionalities
-Have the landing page work for each user type.
 
+WHo did what: Orrin did the landing page. Cameron did the form for the proposal application. Ricardo connected everything to the database. 
+
+
+
+
+Timeline and Functionalities:
+Have the landing page work for each user type.
 
 3/26 
 Submission of an application.
@@ -40,3 +45,9 @@ Add profile picture and make modifications. -Orrin
 
 4/29 (Last Class) 
 Make sure application works. 
+
+Link to landing page: http://cs.gettysburg.edu/~hernri01/cs360/Project/landingPage.html
+
+Link to functionality: http://cs.gettysburg.edu/~hernri01/cs360/Project/appForm.html
+
+
