@@ -1,5 +1,5 @@
 body {
-    background: url(https://images.unsplash.com/photo-1560250084-db7634c63f8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80);
+    background-image: url("https://images.unsplash.com/photo-1560250084-db7634c63f8a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80");
     background-size: cover;
     background-position: top; 
 }
