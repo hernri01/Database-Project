@@ -127,6 +127,7 @@
   </head>
 
 <body>
+<script> src="projScripts.js" </script>
 <form name="app" action="appForm_f.php" method='POST'>
 	<div class="form-left-decoration"></div>
         <div class="form-right-decoration"></div>
@@ -134,19 +135,19 @@
 	<div class="form-inner">
 	<h1>Application Form</h1>
 	<label for="Name">Your Name</label>
-	<input type="text" name="name" placeholder="Name">
+	<input type="text" name="name" placeholder="Name" required>
 	<label for="Employee ID">Your Employee ID</label>
-	<input type="number" name="eid" placeholder="Employee ID">
+	<input type="number" name="eid" placeholder="Employee ID" required>
 	<label for="Department">Your Department</label>
-	<input type="text" name="dep" placeholder="Department">
+	<input type="text" name="dep" placeholder="Department" required>
 	<label for="Trip Location">Trip Location</label>
-	<input type="text" name="loc" placeholder="Trip Location">
+	<input type="text" name="loc" placeholder="Trip Location" required>
 	<label for="Start">Start Date</label>
-	<input type="date" name="sd" placeholder="mm/dd/yyyy">
+	<input type="date" name="sd" placeholder="mm/dd/yyyy" required>
 	<label for="End">End Date</label>
-	<input type="date" name="ed" placeholder="End Date">
+	<input type="date" name="ed" placeholder="End Date" required>
 	<label for="Budget">Estimated Budget for Trip</label>
-	<input type="number" name="budget"  placeholder="Budget">
+	<input type="number" name="budget"  placeholder="Budget" required>
 	<!--
 	<label for="Itinerary">Please Attach the Trip Itinerary</label>
 	<input type="file" name="file">
