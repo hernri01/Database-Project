@@ -8,7 +8,12 @@ $submit = submitApp($db, $_POST);
 
 $name  = $_POST['name'];
 $eid   = $_POST['eid'];
-
+$dep  = $_POST['dep'];
+$country = $_POST['country'];
+$cty = $_POST['cty'];
+$sd = $_POST['sd'];
+$ed = $_POST['ed'];
+$budget = $_POST['budget'];
 
 
 ?>
