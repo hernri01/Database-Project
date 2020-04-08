@@ -1,3 +1,4 @@
+//This file is similar to hwUtils.php 
 <?php
     include_once("db_connect.php");
 
