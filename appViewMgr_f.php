@@ -1,3 +1,6 @@
+//This file is for the manager to view an application. There is a slight difference to the application viewer for the employee.
+//The variation is that the manager can approve and deny as of 4/07/20.
+
 <?php
 require_once("db_connect.php");
 require_once("projUtils.php");
