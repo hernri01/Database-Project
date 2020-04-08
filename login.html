@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head><title> Login :)</title></head>
+
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0; /* Space from this element (entire page) and others*/
+            padding: 0; /*space from content and border*/
+            border: solid blue;
+            border-width: 20px;
+            overflow:hidden;
+            display:block;
+            box-sizing: border-box;
+        }
+
+    </style>
+    <a class="weatherwidget-io" href="https://forecast7.com/en/39d83n77d23/gettysburg/?unit=us"             data-label_1="GETTYSBURG" data-label_2="WEATHER" data-theme="original" >GETTYSBURG WEATHER</a>
+    <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+    <body>
+        <center><h2 style="font-family: 'Courier New', Courier, monospace;"> Enter your login information!</h2></center>
+
+        <form name="login" method="POST" action="login_f.php">
+            <center><input type="text" name="uname" size="30" placeholder="Enter your username"/></center>
+            <br/>
+            <br/>
+
+            <center><input type="password" name="password" size="30" placeholder="Enter your password"/></center>
+            <br/>
+            <br/>
+            <center><input type='submit' value='Enter' /></center>           
+        </form>
+    </body>
+</html>
