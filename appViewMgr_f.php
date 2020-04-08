@@ -125,6 +125,9 @@ else
         </center>
         </table>
         <br><br>
+        <a href='http://cs.gettysburg.edu/~hernri01/cs360/Project/status.php?status=2&id=<?php echo $id; ?>' class='btn btn-outline-success btn-sm'>Approve</a>
+        <a href='http://cs.gettysburg.edu/~hernri01/cs360/Project/status.php?status=1&id=<?php echo $id; ?>' class='btn btn-outline-danger btn-sm'>Deny</a>
+        <!-- // Change the address of this when switching to the master webpage.-->
         </html>  
     <?php
 }

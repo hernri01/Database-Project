@@ -2,9 +2,6 @@
 // Change the address of this when switching to the master webpage.
     include_once("db_connect.php");
     require_once("projUtils.php");
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     session_start();
 
     $status = $_GET['status'];
@@ -15,7 +12,7 @@
     {
         echo "<center><h1> Application Approved. </h1></center>";
     }
-    else if($status == 2)
+    else if($status == 1) // denied
     {
         echo "<center><h1> Application Denied. </h1></center>";
     }
