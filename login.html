@@ -9,24 +9,21 @@
             margin: 0; /* Space from this element (entire page) and others*/
             padding: 0; /*space from content and border*/
             border: solid blue;
-            border-width: 20px;
+            border-width: 10px;
             overflow:hidden;
             display:block;
             box-sizing: border-box;
         }
 
     </style>
-    <a class="weatherwidget-io" href="https://forecast7.com/en/39d83n77d23/gettysburg/?unit=us"             data-label_1="GETTYSBURG" data-label_2="WEATHER" data-theme="original" >GETTYSBURG WEATHER</a>
-    <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    </script>
+
     <body>
         <center><h2 style="font-family: 'Courier New', Courier, monospace;"> Enter your login information!</h2></center>
     
         <!--- This is basically what you need to change. Everything else is just style. -->
-        <form name="login" method="POST" action="login_f.php">
+        <form name="login" method="POST" action="appLogin_f.php">
             <center><h3 style="font-family: 'Courier New', Courier, monospace;"> Enter your title!</h3></center>
-	        <center><input type="radio" id="emp" name="empType" value="emp"></center>
+	        <center><input type="radio" id="emp" name="empType" value="emp" checked></center>
 	        <center><label for="male">Employee</label><br></center>
             <center><input type="radio" id="mgr" name="empType" value="mgr"></center>
             <center><label for="female">Manager</label><br></center>
