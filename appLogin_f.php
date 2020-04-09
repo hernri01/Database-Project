@@ -1,4 +1,5 @@
 <?php
+    //As of now this is just going to allow anyone to sign in regardless if they are in our system. Takes the user to the respective pages.
     error_reporting(E_ALL);
     error_reporting(-1);
     ini_set('error_reporting', E_ALL);
