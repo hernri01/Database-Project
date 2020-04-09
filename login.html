@@ -25,6 +25,15 @@
     
         <!--- This is basically what you need to change. Everything else is just style. -->
         <form name="login" method="POST" action="login_f.php">
+            <center><h3 style="font-family: 'Courier New', Courier, monospace;"> Enter your title!</h3></center>
+	        <center><input type="radio" id="emp" name="empType" value="emp"></center>
+	        <center><label for="male">Employee</label><br></center>
+            <center><input type="radio" id="mgr" name="empType" value="mgr"></center>
+            <center><label for="female">Manager</label><br></center>
+            <center><input type="radio" id="exec" name="empType" value="exec"></center>
+            <center><label for="other">Executive</label></center>
+            <br/>
+            <center><h3 style="font-family: 'Courier New', Courier, monospace;"> Enter your Username and Password!</h3></center>
             <center><input type="text" name="uname" size="30" placeholder="Enter your username"/></center>
             <br/>
             <br/>
