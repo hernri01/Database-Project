@@ -61,7 +61,7 @@
     function getEmpApp($db)
     {
         //Only searching where status is 0 which means 
-        $qStr = "SELECT * FROM app;"; // Initially they can view all their submitted applications.
+        $qStr = "SELECT * FROM app WHERE status =0;"; // Initially they can view all their submitted applications.
         $result = $db->query($qStr);
 
         if($result)
@@ -84,6 +84,64 @@
             }
         }
     }
+
+    //This function will show all the approved applications.
+    function getApprovedApps($db)
+    {
+        $qStr = "SELECT * FROM app WHERE status = '2' OR status = '4';"; 
+        $result = $db->query($qStr);
+
+        if($result)
+        {
+
+            while($row = $result->fetch()) 
+            {
+                $budget = $row['budget'];
+                $id = $row['app_id'];
+
+                echo "<div class='col-lg-12 mb-4'>";
+                    echo "<div class='card'>";
+                        echo"<div class='card-body'>";
+                            echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
+                            echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
+                            echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
+                        echo"</div>";
+                    echo"</div>";
+                echo "</div>";
+            }
+        }
+    }
+
+    /**
+     * This function will get all the apps denied.
+     */
+    function getDeniedApps($db)
+    {
+        //Only searching where status is 0 which means 
+        $qStr = "SELECT * FROM app WHERE status = '1' OR status = '3';"; // Initially they can view all their submitted applications.
+        $result = $db->query($qStr);
+
+        if($result)
+        {
+
+            while($row = $result->fetch()) 
+            {
+                $budget = $row['budget'];
+                $id = $row['app_id'];
+
+                echo "<div class='col-lg-12 mb-4'>";
+                    echo "<div class='card'>";
+                        echo"<div class='card-body'>";
+                            echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
+                            echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
+                            echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
+                        echo"</div>";
+                    echo"</div>";
+                echo "</div>";
+            }
+        }
+    }
+
     /**
      * This function will get all the applications that have not been reviewed for the manager.
      */

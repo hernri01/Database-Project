@@ -79,6 +79,30 @@
                 ?>
             </div>
        </div>
+       <div class="container">
+       	<h2>Denied Applications</h2>
+            <div class="row">
+            <?php 
+                    require_once("projUtils.php");
+                    require_once("db_connect.php");
+                    getDeniedApps($db);
+                    //This will call the getApp function from projUtils.php which will create the 
+                    //boxes needed for the amount of applications the manager can view.
+                ?>
+            </div>
+        </div>
+        <div class="container">
+       	<h2>Approved Applications</h2>
+            <div class="row">
+            <?php 
+                    require_once("projUtils.php");
+                    require_once("db_connect.php");
+                    getApprovedApps($db);
+                    //This will call the getApp function from projUtils.php which will create the 
+                    //boxes needed for the amount of applications the manager can view.
+                ?>
+            </div>
+        </div>
     </section>
 
     <!-- Optional JavaScript -->
