@@ -1,3 +1,4 @@
+//This file is just the text box to provide feedback. 
 <?php
 require_once("db_connect.php");
 require_once("projUtils.php");
