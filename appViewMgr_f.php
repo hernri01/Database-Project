@@ -1,9 +1,6 @@
 <?php
 require_once("db_connect.php");
 require_once("projUtils.php");
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 session_start();
 
 $id = $_GET['id'];
@@ -26,24 +23,63 @@ else
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     
-        <style>
-             #header { 
-        	background-color: rgb(144, 202, 249);
+    <style>
+
+    html, body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px; 
+    color: #666;
+    }
+
+    input, textarea { 
+    outline: none;
+    }
+
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(144, 202, 249);
+    }
+
+      form {
+      position: relative;
+      width: 90%;
+      border-radius: 10px;
+      background: #fff;
+      }
+
+      #header { 
+            background-color: rgb(144, 202, 249);
             /* background: url("header.jpeg");
             /* background: url("imgs/header.jpeg") center center / cover no-repeat; */
             }
 
             #budget {
-        	    text-align: right;
+                text-align: right;
             }
 
             h1 {
-        	color: white;
-			font-weight: 700;
-			font-size: 5em;
-		    }
+            color: white;
+            font-weight: 700;
+            font-size: 5em;
+            }
             table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
@@ -60,10 +96,12 @@ else
             background-color: #dddddd;
             }
         </style>
-        <center> <h2>Your Application</h2>
 
-        <table>
-        <tr>
+<form class="text-center border border-light p-5">
+    <p class="h4 mb-4">Your Application</p><hr><br>
+
+<table class="table table-striped">
+  <tr>
             <th>Application ID</th>
             <th><?php echo $id; ?></th>
         </tr>
@@ -104,30 +142,54 @@ else
         <tr>
         <td>Status</td>
         <td><?php 
-            if($result['status'] == 0 )
-            {
-                echo "Application submitted, but not reviewed.";
-            }
-            else if($result['status'] == 1)
-            {
-                echo "Application was denied";
-            }
-            else if($result['status'] == 2)
-            {
-                echo "Application was accepted.";
-            }
+                if($result['status'] == 0 )
+                {
+                    echo "Application submitted, but not reviewed.";
+                }
+                else if($result['status'] == 1)
+                {
+                    echo "Application was denied by the manager";
+                }
+                else if($result['status'] == 2)
+                {
+                    echo "Application was accepted by the manager.";
+                }
+                elseif($result['status'] == 3)
+                {
+                    echo "Application was denied by the Executive.";
+                }
+                elseif($result['status'] == 4)
+                {
+                    echo "Application was approved by the Executive.";
+                }
         ?></td>
         </tr>
         <tr>
         <td>Plan</td>
         <td>Not available</td>
         </tr>
-        </center>
-        </table>
-        <br><br>
-        <a href='http://cs.gettysburg.edu/~hernri01/cs360/Project/status.php?status=2&id=<?php echo $id; ?>' class='btn btn-outline-success btn-sm'>Approve</a>
-        <a href='http://cs.gettysburg.edu/~hernri01/cs360/Project/status.php?status=1&id=<?php echo $id; ?>' class='btn btn-outline-danger btn-sm'>Deny</a>
+</table>
         <!-- // Change the address of this when switching to the master webpage.-->
+        <br><br>
+
+        <?php
+            if($result['status'] < 2)
+            {
+                ?>
+                    <a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/status.php?status=2&id=<?php echo $id; ?>' class='btn btn-outline-success btn-sm'>Approve</a>
+                    <a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/status.php?status=1&id=<?php echo $id; ?>' class='btn btn-outline-danger btn-sm'>Deny</a>
+                    <?php
+            }
+            else 
+            {
+                ?>
+                    <a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/status.php?status=4&id=<?php echo $id; ?>' class='btn btn-outline-success btn-sm'>Approve</a>
+                    <a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/status.php?status=3&id=<?php echo $id; ?>' class='btn btn-outline-danger btn-sm'>Deny</a>
+                <?php      
+            }
+        ?>
+        </form>
+
         </html>  
     <?php
 }

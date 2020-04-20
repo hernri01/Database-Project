@@ -49,6 +49,7 @@
                 $out['ed'] = $row['trip_end'];
                 $out['budget'] = $row['budget'];
                 $out['status'] = $row['status'];
+                $out['feedback'] = $row['feedback'];
 
                 return $out;
             }
@@ -76,7 +77,7 @@
                         echo"<div class='card-body'>";
                             echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
                             echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
-                            echo"<a href='http://cs.gettysburg.edu/~hernri01/cs360/Project/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
+                            echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
                         echo"</div>";
                     echo"</div>";
                 echo "</div>";
@@ -88,7 +89,7 @@
      */
     function getApp($db)
     {
-        //Only searching where status is 0 which means 
+        //Only searching where status is 0 which means applications have not had any action.
         $qStr = "SELECT * FROM app WHERE status=0;";
         $result = $db->query($qStr);
 
@@ -113,6 +114,33 @@
         }
     }
 
+    function getExecApp($db)
+    {
+         //Only searching where status is 2 which means applications have been approved by the manager.
+         $qStr = "SELECT * FROM app WHERE status=2;";
+         $result = $db->query($qStr);
+ 
+         if($result)
+         {
+ 
+             while($row = $result->fetch()) 
+             {
+                 $budget = $row['budget'];
+                 $id = $row['app_id'];
+ 
+                 echo "<div class='col-lg-12 mb-4'>";
+                     echo "<div class='card'>";
+                         echo"<div class='card-body'>";
+                             echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
+                             echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
+                             echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appViewMgr_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
+                         echo"</div>";
+                     echo"</div>";
+                 echo "</div>";
+             }
+         }
+    }
+
     /**
      * This function will approve/deny the application. It will change the status of the application.
      * 0 = The application has been submitted.
@@ -129,6 +157,15 @@
         SET status = '$status'
         WHERE app_id = '$id';";
         
+        $result = $db->query($qStr);
+    }
+
+    function sendFeedback($db, $message,$id)
+    {
+        $qStr = "UPDATE app
+        SET feedback = '$message'
+        WHERE app_id = '$id';";
+
         $result = $db->query($qStr);
     }
 ?>

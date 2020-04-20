@@ -69,59 +69,13 @@
        <div class="container">
        	<h2>Applications for Review</h2>
             <div class="row">
-                <div class="col-lg-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Project Title<strong style="float: right">$140.00</strong></h5>
-                            <p class="card-text">A brief description of the project. Possibly a couple sentences.</p>
-                            <a href="" class="btn btn-outline-info btn-sm">View</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Employee</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Manager</a>
-                            <a href="" class="btn btn-outline-success btn-sm">Approve</a>
-                            <a href="" class="btn btn-outline-danger btn-sm">Deny</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Project Title<strong style="float: right">$1300.00</strong></h5>
-                            <p class="card-text">A brief description of the project. Possibly a couple sentences.</p>
-                            <a href="" class="btn btn-outline-info btn-sm">View</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Employee</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Manager</a>
-                            <a href="" class="btn btn-outline-success btn-sm">Approve</a>
-                            <a href="" class="btn btn-outline-danger btn-sm">Deny</a>
-                        </div>
-                    </div>
-                </div>
-                    <div class="col-lg-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Project Title<strong style="float: right">$530.00</strong></h5>
-                            <p class="card-text">A brief description of the project. Possibly a couple sentences.</p>
-                            <a href="" class="btn btn-outline-info btn-sm">View</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Employee</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Manager</a>
-                            <a href="" class="btn btn-outline-success btn-sm">Approve</a>
-                            <a href="" class="btn btn-outline-danger btn-sm">Deny</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Project Title<strong style="float: right">$3200.00</strong></h5>
-                            <p class="card-text">A brief description of the project. Possibly a couple sentences.</p>
-                            <a href="" class="btn btn-outline-info btn-sm">View</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Employee</a>
-                            <a href="" class="btn btn-outline-primary btn-sm">Message Manager</a>
-                            <a href="" class="btn btn-outline-success btn-sm">Approve</a>
-                            <a href="" class="btn btn-outline-danger btn-sm">Deny</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
+            <?php 
+                    require_once("projUtils.php");
+                    require_once("db_connect.php");
+                    getExecApp($db);
+                    //This will call the getApp function from projUtils.php which will create the 
+                    //boxes needed for the amount of applications the manager can view.
+                ?>
             </div>
        </div>
     </section>

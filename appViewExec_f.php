@@ -1,10 +1,10 @@
 <?php
 require_once("db_connect.php");
 require_once("projUtils.php");
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 session_start();
+error_reporting(E_ALL);
+error_reporting(-1);
+ini_set('error_reporting', E_ALL);
 
 $id = $_GET['id'];
 $result = view($db, $id);
@@ -38,31 +38,28 @@ else
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     
-        <style>
+    <style>
 
+    html, body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 18px; 
+    color: #666;
+    }
 
+    input, textarea { 
+    outline: none;
+    }
 
-
-      html, body {
-      min-height: 100vh;
-      padding: 0;
-      margin: 0;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 18px; 
-      color: #666;
-      }
-
-      input, textarea { 
-      outline: none;
-      }
-
-      body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-            background-color: rgb(144, 202, 249);
-      }
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(144, 202, 249);
+    }
 
       form {
       position: relative;
@@ -71,7 +68,7 @@ else
       background: #fff;
       }
 
-             #header { 
+      #header { 
             background-color: rgb(144, 202, 249);
             /* background: url("header.jpeg");
             /* background: url("imgs/header.jpeg") center center / cover no-repeat; */
@@ -148,34 +145,37 @@ else
         <tr>
         <td>Status</td>
         <td><?php 
-            if($result['status'] == 0 )
-            {
-                echo "Application submitted, but not reviewed.";
-            }
-            else if($result['status'] == 1)
-            {
-                echo "Application was denied by the manager";
-            }
-            else if($result['status'] == 2)
-            {
-                echo "Application was accepted by the manager.";
-            }
-            elseif($result['status'] == 3)
-            {
-                echo "Application was denied by the Executive.";
-            }
-            elseif($result['status'] == 4)
-            {
-                echo "Application was approved by the Executive.";
-            }
+                if($result['status'] == 0 )
+                {
+                    echo "Application submitted, but not reviewed.";
+                }
+                else if($result['status'] == 1)
+                {
+                    echo "Application was denied by the manager";
+                }
+                else if($result['status'] == 2)
+                {
+                    echo "Application was accepted by the manager.";
+                }
+                elseif($result['status'] == 3)
+                {
+                    echo "Application was denied by the Executive.";
+                }
+                elseif($result['status'] == 4)
+                {
+                    echo "Application was approved by the Executive.";
+                }
         ?></td>
         </tr>
         <tr>
-        <td>Feedback</td>
-        <td><?php echo $result['feedback']; ?></td>
+        <td>Plan</td>
+        <td>Not available</td>
         </tr>
 </table>
-        
+        <!-- // Change the address of this when switching to the master webpage.-->
+        <!-- <br><br>
+        <a href='http://cs.gettysburg.edu/~hernri01/cs360/Project/status.php?status=2&id=<?php echo $id; ?>' class='btn btn-outline-success btn-sm'>Approve</a>
+        <a href='http://cs.gettysburg.edu/~hernri01/cs360/Project/status.php?status=1&id=<?php echo $id; ?>' class='btn btn-outline-danger btn-sm'>Deny</a> -->
         </form>
 
         </html>  
