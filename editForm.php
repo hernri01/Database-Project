@@ -93,7 +93,7 @@ else
         
         
             <!-- Submit button -->
-        <button class="btn my-4 btn-outline-info btn-block" type="submit" href="/">Submit</button>
+        <button class="btn my-4 btn-outline-info btn-block" type="submit" href="/">Save</button>
         </form>
         <!-- Default form register -->
         </body>
