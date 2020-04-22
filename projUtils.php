@@ -20,7 +20,23 @@
 
         $result = $db->query($qStr);
     }
+    
+    function saveChanges($db,$input)
+    {
+        // is supposed to save changes to the edited form. not complete yet
+        $emp = $input['eid'];
+        $dno = $input['dep'];
+        $location = $input['loc'];
+        $startDate = $input['sd'];
+        $endDate = $input['ed'];
+        $budget = $input['budget'];
+        $country = $_POST['country'];
+        $cty = $_POST['cty'];
 
+        $qStr = "INSERT INTO app (emp_id, dno, country, city, trip_start, trip_end, budget) VALUES ( '$emp', '$dno', '$country', '$cty', '$startDate', '$endDate', '$budget');";
+
+        $result = $db->query($qStr);
+    }
 
 
     /**
