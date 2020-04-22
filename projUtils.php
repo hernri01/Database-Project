@@ -106,6 +106,7 @@
                             echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
                             echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
                             echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
+                            echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/editForm.php?id=$id' class='btn btn-outline-info btn-sm'>Edit</a>"; // Change the address of this when switching to the master webpage.
                         echo"</div>";
                     echo"</div>";
                 echo "</div>";
