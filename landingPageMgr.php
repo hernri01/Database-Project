@@ -1,4 +1,7 @@
-<!-- <!doctype html> -->
+<?php 
+session_start();
+?>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -46,7 +49,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="http://cs.gettysburg.edu/~hernri01/ProposalApp/">Home <span class="sr-only">(current)
+				<a class="nav-link" href="landingPageMgr.php">Home <span class="sr-only">(current)
 				</span></a></li>
       		<li class="nav-item"><a class="nav-link" href="#">About</a></li>
       		<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
@@ -54,7 +57,7 @@
     	</ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item"><a class="nav-link" href="#">Manager Name</a></li>
-      		<li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
+      		<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
 		</ul>
     </form>
 	</div>
@@ -81,6 +84,30 @@
                 ?>
             </div>
        </div>
+       <div class="container">
+       	<h2>Previously Approved Applications</h2>
+            <div class="row">
+            <?php 
+                    require_once("projUtils.php");
+                    require_once("db_connect.php");
+                    getApprovedApps($db);
+                    //This will call the getApp function from projUtils.php which will create the 
+                    //boxes needed for the amount of applications the manager can view.
+                ?>
+            </div>
+        </div>
+        <div class="container">
+       	<h2>Previously Denied Applications</h2>
+            <div class="row">
+            <?php 
+                    require_once("projUtils.php");
+                    require_once("db_connect.php");
+                    getDeniedApps($db);
+                    //This will call the getApp function from projUtils.php which will create the 
+                    //boxes needed for the amount of applications the manager can view.
+                ?>
+            </div>
+        </div>
     </section>
 
     <!-- Optional JavaScript -->

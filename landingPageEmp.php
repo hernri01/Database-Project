@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -45,7 +49,7 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="landingPage.html">Home <span class="sr-only">(current)
+				<a class="nav-link" href="landingPageEmp.php">Home <span class="sr-only">(current)
 				</span></a></li>
       		<li class="nav-item"><a class="nav-link" href="#">About</a></li>
       		<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
@@ -53,7 +57,7 @@
     	</ul>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item"><a class="nav-link" href="#">Employee Name</a></li>
-      		<li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
+      		<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
 		</ul>
     </form>
 	</div>
@@ -63,7 +67,7 @@
     <section id="header" class="jumbotron text-center">
         <h1 class="display-3">Employee Page</h1><br>
    
-        <a href="http://cs.gettysburg.edu/~hernri01/cs360/Project/appForm.html" class="btn btn-primary">Submit an Application</a>
+        <a href="http://cs.gettysburg.edu/~hernri01/ProposalApp/appForm.php" class="btn btn-primary">Submit an Application</a>
     </section>
 
     <section id="gallery">
