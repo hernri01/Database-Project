@@ -73,7 +73,8 @@
   <input type="text" id="defaultRegisterFormPassword" class="form-control mb-4" name="cty" placeholder="City Destination" required>
   <input type="date" id="defaultRegisterFormPassword" class="form-control mb-4" name="sd" placeholder="mm/dd/yyyy" required>
   <input type="date" id="defaultRegisterFormPassword" class="form-control mb-4" name="ed" placeholder="End Date" required>
-  <input type="number" id="defaultRegisterFormPassword" class="form-control mb-4" name="budget"  placeholder="Budget" required>
+  <input type="number" id="defaultRegisterFormPassword" class="form-control mb-4" name="budget"  placeholder="Funding Requested" required>
+  <textarea id="desc" name = "desc" class="form-control mb-4" rows="4" cols="110" placeholder="Enter a short 1 - 2 sentence description"></textarea>
 
 
     <!-- Submit button -->
