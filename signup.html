@@ -1,49 +1,88 @@
+
 <!DOCTYPE html>
 <html>
+    <head><title> Sign up</title></head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
 
     <style>
-        html,body{
-            width: 100%;
-            height: 100%;
-            margin: 0; /* Space from this element (entire page) and others*/
-            padding: 0; /*space from content and border*/
-            border: solid blue;
-            border-width: 20px;
-            overflow:hidden;
-            display:block;
-            box-sizing: border-box;
-        }
-        input:hover[type="submit"]
-        {
-            background: greenyellow;
-        }
+
+      html, body {
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      font-size: 18px; 
+      color: #666;
+      }
+
+      input, textarea { 
+      outline: none;
+      }
+
+      body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+            background-color: rgb(144, 202, 249);
+      }
+
+      form {
+      position: relative;
+      width: 90%;
+      border-radius: 10px;
+      background: #fff;
+      }
+
+      input[type=radio]:checked + label {
+        color: lightblue;
+        font-weight: bold;
+}
 
     </style>
-    <head><title> Create an account</title></head>
 
-    <a class="weatherwidget-io" href="https://forecast7.com/en/39d83n77d23/gettysburg/?unit=us"         data-label_1="GETTYSBURG" data-label_2="WEATHER" data-theme="original" >GETTYSBURG WEATHER</a>
-    <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    </script>
     <body>
-        <center><h3 style="font-family: 'Courier New', Courier, monospace;"> Enter your information!</h3></center>
+        <form name="login" class="text-center border border-light p-5" method="POST" action="signup_f.php">
 
-        <form name="login" method="POST" action="signup_f.php">
-            <center><input type="text" name="uname" size="30" placeholder="Enter your username"/></center>
-            <br/>
-            <br/>
+        <center><h2>Sign up!</h2></center> <hr> <br>
+    
+        <!--- This is basically what you need to change. Everything else is just style. -->
+        <center><h8>What is your highest position? Select one</h8></center>
 
-            <center><input type="password" name="password" size="30" placeholder="Enter your password"/></center>
-            <br/>
-            <br/>
-            <center><input type="date" name="bdate" size="30" placeholder="Enter your birthdate"/></center>
-            <br/>
-            <br/>
+            <!-- <label class="btn btn-info"> -->
+	        <input type="radio" id="emp" name="empType" value="emp" autocomplete="off" checked = ><label for="emp">Employee</label><br>
+            <!-- <label class="btn btn-info"> -->
+            <input type="radio" id="mgr" name="empType" value="mgr" autocomplete="off"><label for="mgr">Manager</label><br>
+            <!-- <label class="btn btn-info"> -->
+            <input type="radio" id="exec" name="empType" value="exec" autocomplete="off"><label for="exec">Executive</label>
+            <br><br>
 
-            <center><input type="text" name="email" size="30" placeholder="Enter your email address"/></center>
-            <br/>
-            <br/>
-            <center><input type='submit' value='Enter' /></center>           
+            <center><input type="text" class="form-control mb-4" name="fname" size="30" placeholder="Enter your first name."/></center>
+            <br>
+
+            <center><input type="text" class="form-control mb-4" name="lname" size="30" placeholder="Enter your last name."/></center>
+            <br>
+
+            <center><input type="text" class="form-control mb-4" name="email" size="30" placeholder="Email Address"/></center>
+            <br>
+
+            <center><input type="password" class="form-control" name="password" size="30" placeholder="Password"/></center>
+            <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 8 characters and 1 digit
+            </small>
+            <br>
+            <center><input class="btn btn-info my-4 btn-block" type='submit' value='Enter' /></center>     
+
+
+          <div class="container">  
         </form>
     </body>
 </html>

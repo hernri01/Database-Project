@@ -1,5 +1,6 @@
 <?php
-    include_once("db_connect.php");
+    session_start();
+    include_once("db_connect.php"); 
 
     /**
      * This function will submit the application into the database. 
@@ -7,7 +8,7 @@
     function submitApp($db,$input)
     {
         //This will submit the information from the application as of 3/26. We are missing the plan and other things, but that will come at a later update. 
-        $emp = $input['eid'];
+        $emp = $_SESSION['user'];
         $dno = $input['dep'];
         $location = $input['loc'];
         $startDate = $input['sd'];
@@ -77,8 +78,39 @@
     //This is for the employees to view their applications.
     function getEmpApp($db)
     {
+        $id = $_SESSION['user'];
         //Only searching where status is 0 which means 
-        $qStr = "SELECT * FROM app WHERE status =0;"; // Initially they can view all their submitted applications.
+        $qStr = "SELECT * FROM app WHERE status =0 AND emp_id = '$id';"; // Initially they can view all their submitted applications.
+        $result = $db->query($qStr);
+
+        if($result)
+        {
+
+            while($row = $result->fetch()) 
+            {
+                $budget = $row['budget'];
+                $id = $row['app_id'];
+                $cty = $row['city'];
+
+                echo "<div class='col-lg-12 mb-4'>";
+                    echo "<div class='card'>";
+                        echo"<div class='card-body'>";
+                            echo"<h5 class='card-title'>Project Title ID : $id, $cty <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
+                            echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
+                            echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
+                        echo"</div>";
+                    echo"</div>";
+                echo "</div>";
+            }
+        }
+    }
+
+    //This function will show all the approved applications.
+    function getApprovedApps($db)
+    {
+        $id = $_SESSION['user'];
+
+        $qStr = "SELECT * FROM app WHERE status = '2' OR status = '4' AND emp_id = '$id';"; 
         $result = $db->query($qStr);
 
         if($result)
@@ -95,33 +127,6 @@
                             echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
                             echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
                             echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
-                        echo"</div>";
-                    echo"</div>";
-                echo "</div>";
-            }
-        }
-    }
-
-    //This function will show all the approved applications.
-    function getApprovedApps($db)
-    {
-        $qStr = "SELECT * FROM app WHERE status = '2' OR status = '4';"; 
-        $result = $db->query($qStr);
-
-        if($result)
-        {
-
-            while($row = $result->fetch()) 
-            {
-                $budget = $row['budget'];
-                $id = $row['app_id'];
-
-                echo "<div class='col-lg-12 mb-4'>";
-                    echo "<div class='card'>";
-                        echo"<div class='card-body'>";
-                            echo"<h5 class='card-title'>Project Title ID : $id , $cty<strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
-                            echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
-                            echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
                             echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/editForm.php?id=$id' class='btn btn-outline-info btn-sm'>Edit</a>"; // Change the address of this when switching to the master webpage.
                         echo"</div>";
                     echo"</div>";
@@ -135,8 +140,10 @@
      */
     function getDeniedApps($db)
     {
+        $id = $_SESSION['user'];
+
         //Only searching where status is 0 which means 
-        $qStr = "SELECT * FROM app WHERE status = '1' OR status = '3';"; // Initially they can view all their submitted applications.
+        $qStr = "SELECT * FROM app WHERE status = '1' OR status = '3' AND emp_id = '$id';"; // Initially they can view all their submitted applications.
         $result = $db->query($qStr);
 
         if($result)
@@ -150,7 +157,7 @@
                 echo "<div class='col-lg-12 mb-4'>";
                     echo "<div class='card'>";
                         echo"<div class='card-body'>";
-                            echo"<h5 class='card-title'>Project Title ID : $id , $cty <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
+                            echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
                             echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
                             echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appView_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
                         echo"</div>";
@@ -180,7 +187,7 @@
                 echo "<div class='col-lg-12 mb-4'>";
                     echo "<div class='card'>";
                         echo"<div class='card-body'>";
-                            echo"<h5 class='card-title'>Project Title ID : $id , $cty<strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
+                            echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
                             echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
                             echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appViewMgr_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
                         echo"</div>";
@@ -207,7 +214,7 @@
                  echo "<div class='col-lg-12 mb-4'>";
                      echo "<div class='card'>";
                          echo"<div class='card-body'>";
-                             echo"<h5 class='card-title'>Project Title ID : $id , $cty <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
+                             echo"<h5 class='card-title'>Project Title ID : $id <strong style='float: right'>Proposed Bugdet: $$budget</strong></h5>";
                              echo"<p class='card-text'>A brief description of the project. Possibly a couple sentences.</p>";
                              echo"<a href='http://cs.gettysburg.edu/~hernri01/ProposalApp/appViewMgr_f.php?id=$id' class='btn btn-outline-info btn-sm'>View</a>"; // Change the address of this when switching to the master webpage.
                          echo"</div>";
@@ -243,5 +250,99 @@
         WHERE app_id = '$id';";
 
         $result = $db->query($qStr);
+    }
+
+    function addUser($db, $pass, $fname, $lname, $email, $type)
+    {
+
+        $query = "INSERT INTO emp (fname, lname, email, password,empType) VALUES ('$fname', '$lname', '$email', '$pass', '$type');";
+        // execute the query 
+        $result = $db->query($query);
+           
+    }
+
+    function registerUser($db, $input){
+        $fname=$input['fname'];
+        $lname=$input['lname'];
+        $pass=$input['password'];
+        $email=$input['email'];
+        $type = $input['empType'];
+        $passHash= hash('md5',$pass);
+
+        //checks if this user exists in user table already, if yes, return false
+        $qStr = "SELECT * FROM emp WHERE email='$email';";
+        $qResult= $db->query($qStr);
+        if($qResult)
+        {
+            $nRows = $qResult->rowCount();
+            if($nRows != 0)
+            {
+                return false;
+            }
+            else 
+            {
+                addUser($db, $passHash, $fname, $lname, $email,$type);
+                return true;
+            }
+        }
+    }
+
+    function checkUser($db, $email, $pass)
+    {
+        //Getting the user name
+        $qStr = "SELECT * FROM emp WHERE email= '$email' AND password = '$pass';";
+        $qRes = $db->query($qStr);
+
+        $passStr="SELECT * FROM emp WHERE password= '$pass';";
+        $passRes = $db->query($passStr);
+
+        if($passRes != FALSE && $qRes != FALSE)
+        {
+            $passRows = $passRes->rowCount();
+            $userRows = $qRes->rowCount();
+
+            if($userRows == 0)
+            {
+                return -1;
+            }
+            elseif($userRows == 1 && $passRows == 0)
+            {
+                return -3;
+            }
+            
+            
+            while($row = $qRes->fetch()) 
+            {
+                $out['id'] = $row['id'];
+                return $out;
+            }
+        }
+    }
+
+    function directEmp($db, $id)
+    {
+        $qStr = "SELECT * FROM emp WHERE id = '$id';";
+
+        $result = $db->query($qStr);
+
+        if($result)
+        {
+            while($row = $result->fetch())
+            {
+                $out['empType'] = $row['empType'];
+            }
+
+            if($out['empType'] == 'emp')
+            {
+                header("Location: http://cs.gettysburg.edu/~hernri01/ProposalApp/landingPageEmp.php"); 
+            }
+            else if($out['empType'] == 'mgr')
+            {
+                header("Location: http://cs.gettysburg.edu/~hernri01/ProposalApp/landingPageMgr.php"); 
+            }
+            else{
+                header("Location: http://cs.gettysburg.edu/~hernri01/ProposalApp/landingPageExec.php"); 
+            }
+        }
     }
 ?>
