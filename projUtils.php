@@ -16,8 +16,9 @@
         $budget = $input['budget'];
         $country = $_POST['country'];
         $cty = $_POST['cty'];
+        $desc = $_POST['desc'];
 
-        $qStr = "INSERT INTO app (emp_id, dno, country, city, trip_start, trip_end, budget) VALUES ( '$emp', '$dno', '$country', '$cty', '$startDate', '$endDate', '$budget');";
+        $qStr = "INSERT INTO app (emp_id, dno, country, city, trip_start, trip_end, budget, descr) VALUES ( '$emp', '$dno', '$country', '$cty', '$startDate', '$endDate', '$budget', '$desc');";
 
         $result = $db->query($qStr);
     }
@@ -342,6 +343,30 @@
             }
             else{
                 header("Location: http://cs.gettysburg.edu/~hernri01/ProposalApp/landingPageExec.php"); 
+            }
+        }
+    }
+
+    //Gets the user information
+    function getUserInfo($db)
+    {
+        $id = $_SESSION['user'];
+
+        $qStr = "SELECT * FROM emp WHERE id = '$id';";
+
+        $result = $db->query($qStr);
+
+        if($result)
+        {
+            while($row = $result->fetch())
+            {
+                $out['fname'] = $result['fname'];
+                $out['lname'] = $result['lname'];
+                $out['email'] = $result['email'];
+                $out['empType'] = $result['empType'];
+                $out['id'] = $result['id'];
+
+                return $out;
             }
         }
     }
