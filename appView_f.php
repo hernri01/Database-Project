@@ -22,7 +22,7 @@ else
 {
     ?>   
         <html>
-
+        <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
@@ -31,6 +31,7 @@ else
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+          
      <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
@@ -58,7 +59,7 @@ else
       }
 
       body {
-      display: flex;
+    
       justify-content: center;
       align-items: center;
       padding: 20px;
@@ -72,6 +73,37 @@ else
       background: #fff;
       }
 
+             html, body {
+     
+      padding: 0;
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 18px; 
+      color: #666;
+      }
+
+      input, textarea { 
+      outline: none;
+      }
+
+      body {
+ 
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+            background-color: rgb(144, 202, 249);
+      }
+
+      form {
+      display: inline-block;
+      padding: 20px;
+      text-align: center
+      position: relative;
+      width: 90%;
+      border-radius: 10px;
+      background: #fff;
+      }
+            
              #header { 
             background-color: rgb(144, 202, 249);
             /* background: url("header.jpeg");
@@ -103,7 +135,35 @@ else
             background-color: #dddddd;
             }
         </style>
+            <title>View Form</title>
+            </head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container">
+	<a class="navbar-brand" href="#">Veriform</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+	</button>
 
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="landingPageEmp.php">Dashboard <span class="sr-only">(current)
+				</span></a></li>
+
+
+    	</ul>
+		<ul class="navbar-nav ml-auto">
+      		<li class="nav-item"><a class="nav-link" href="(READY)logout.php">Log Out</a></li>
+		</ul>
+    </form>
+	</div>
+</div>
+</nav>
+    
+    
+<br><br>    
 <form class="text-center border border-light p-5">
     <p class="h4 mb-4">Your Application</p><hr><br>
 
@@ -178,7 +238,7 @@ else
 </table>
         
         </form>
-
+            </body>
         </html>  
     <?php
 }
