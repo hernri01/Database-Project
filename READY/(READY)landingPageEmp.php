@@ -62,9 +62,9 @@ session_start();
 </nav>
 
     <section id="header" class="jumbotron text-center">
-        <h1 class="display-3">Employee Page</h1><br>
+        <h1 class="display-3">Your Applications</h1><br>
    
-        <a href="http://cs.gettysburg.edu/~hernri01/ProposalApp/appForm.php" class="btn btn-primary">Submit an Application</a>
+        <a href="http://cs.gettysburg.edu/~hernri01/ProposalApp/appForm.php" class="btn btn-primary">Create an Application</a>
     </section>
 
     <section id="gallery">
