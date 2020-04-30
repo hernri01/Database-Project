@@ -46,17 +46,16 @@ session_start();
     <span class="navbar-toggler-icon"></span>
 	</button>
 
+
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="(READY)landingPageMgr.php">Dashboard <span class="sr-only">(current)
+				<a class="nav-link" href="landingPageMgr.php">Dashboard <span class="sr-only">(current)
 				</span></a></li>
-
-
     	</ul>
 		<ul class="navbar-nav ml-auto">
-			<li class="nav-item"><a class="nav-link" href="#">Manager</a></li>
-      		<li class="nav-item"><a class="nav-link" href="(READY)logout.php">Log Out</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Manager Name</a></li>
+      		<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
 		</ul>
     </form>
 	</div>
@@ -64,7 +63,10 @@ session_start();
 </nav>
 
     <section id="header" class="jumbotron text-center">
-        <h1 class="display-3">Submitted Applications</h1><br>
+        <h1 class="display-3">Manager Page</h1><br>
+   
+        <!-- <a href="" class="btn btn-primary">Message Executive</a> -->
+        <!-- <a href="" class="btn btn-success">Create New</a> -->
     </section>
 
     <section id="gallery">
