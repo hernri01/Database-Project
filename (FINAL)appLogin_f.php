@@ -40,18 +40,5 @@
         $id = $result['id'];
 
         directEmp($db, $id);
-
-        // if($user == "emp")
-        // {
-        //     header("Location: http://cs.gettysburg.edu/~hernri01/ProposalApp/landingPageEmp.php"); 
-        // }
-        // elseif($user == "mgr")
-        // {
-        //     header("Location: http://cs.gettysburg.edu/~hernri01/ProposalApp/landingPageMgr.php"); 
-        // }
-        // else 
-        // {
-        //     header("Location: http://cs.gettysburg.edu/~hernri01/ProposalApp/landingPageExec.php"); 
-        // }
     }
 ?>
