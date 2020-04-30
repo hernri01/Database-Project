@@ -90,7 +90,7 @@
 	          <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		        <ul class="navbar-nav mr-auto">
 			      <li class="nav-item active">
-				    <a class="nav-link" onclick="history.go(-1)">Dashboard <span class="sr-only">(current)
+				    <a class="nav-link href="landingPageEmp.php">Dashboard <span class="sr-only">(current)
 				    </span></a></li>
 
 
@@ -115,7 +115,7 @@
             <p class="h4 mb-4">Application</p><hr><br>
             <div class="form-row mb-4">
             <div class="col">
-            <input type="text" id="defaultRegisterFormPassword" class="form-control mb-4" name="name" placeholder="Name" value="<?php echo $result['fname']; ?> <?php echo $result['lname']" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+            <input type="text" id="defaultRegisterFormPassword" class="form-control mb-4" name="name" placeholder="Name" value="<?php echo $result['name'];?>" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
             </div>
             <div class="col">
             <input type="number" id="defaultRegisterFormPassword" class="form-control mb-4" name="eid" placeholder="Employee ID" value="<?php echo $result['id']; ?>" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
