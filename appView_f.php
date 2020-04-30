@@ -40,100 +40,75 @@ else
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     
-        <style>
-
-
-
-
+    <style>
       html, body {
-      min-height: 100vh;
-      padding: 0;
-      margin: 0;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 18px; 
-      color: #666;
-      }
-
-      input, textarea { 
-      outline: none;
-      }
-
-      body {
-    
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-            background-color: rgb(144, 202, 249);
-      }
-
-      form {
-      position: relative;
-      width: 90%;
-      border-radius: 10px;
-      background: #fff;
-      }
-
-             html, body {
-     
-      padding: 0;
-      margin: 0;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 18px; 
-      color: #666;
-      }
-
-      input, textarea { 
-      outline: none;
-      }
-
-      body {
- 
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-            background-color: rgb(144, 202, 249);
-      }
-
-      form {
-      display: inline-block;
-      padding: 20px;
-      text-align: center
-      position: relative;
-      width: 90%;
-      border-radius: 10px;
-      background: #fff;
-      }
-            
-             #header { 
-            background-color: rgb(144, 202, 249);
-            /* background: url("header.jpeg");
-            /* background: url("imgs/header.jpeg") center center / cover no-repeat; */
-            }
-
-            #budget {
-                text-align: right;
-            }
-
-            h1 {
-            color: white;
-            font-weight: 700;
-            font-size: 5em;
-            }
-            table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 60%;
-            }
-
-            td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 10px;
-            }
-
-            tr:nth-child(even) {
-            background-color: #dddddd;
-            }
+        min-height: 100vh;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 18px; 
+        color: #666;
+        padding: 0;
+        margin: 0;
+        }
+  
+        input, textarea { 
+        outline: none;
+        }
+  
+        body {
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(144, 202, 249);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgb(144, 202, 249);
+        }
+  
+        form {
+        position: relative;
+        width: 90%;
+        border-radius: 10px;
+        background: #fff;
+        display: inline-block;
+        padding: 20px;
+        text-align: center
+        }
+  
+  
+        input, textarea { 
+        outline: none;
+        }
+  
+        
+              
+        #header { 
+        background-color: rgb(144, 202, 249);
+        }
+  
+        #budget {
+        text-align: right;
+        }
+  
+        h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 5em;
+        }
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 60%;
+        }
+  
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
+        }
+  
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
         </style>
             <title>View Form</title>
             </head>
