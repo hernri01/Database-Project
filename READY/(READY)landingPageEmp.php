@@ -49,13 +49,11 @@ session_start();
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="(READY)landingPageEmp.php">Dashboard <span class="sr-only">(current)
+				<a class="nav-link" href="landingPageEmp.php">Dashboard <span class="sr-only">(current)
 				</span></a></li>
-      	
-
     	</ul>
 		<ul class="navbar-nav ml-auto">
-			<li class="nav-item"><a class="nav-link" href="#">Employee</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Employee Name</a></li>
       		<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
 		</ul>
     </form>
@@ -64,9 +62,9 @@ session_start();
 </nav>
 
     <section id="header" class="jumbotron text-center">
-        <h1 class="display-3">Your Applications</h1><br>
+        <h1 class="display-3">Employee Page</h1><br>
    
-        <a href="http://cs.gettysburg.edu/~wilsor01/ProposalApp/(READY)appForm.php" class="btn btn-primary">Create an Application</a>
+        <a href="http://cs.gettysburg.edu/~hernri01/ProposalApp/appForm.php" class="btn btn-primary">Submit an Application</a>
     </section>
 
     <section id="gallery">
