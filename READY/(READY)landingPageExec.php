@@ -48,14 +48,12 @@ session_start();
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active">
-				<a class="nav-link" href="(READY)landingPageExec.php">Dashboard <span class="sr-only">(current)
+				<a class="nav-link" href="landingPageExec.php">Dashboard <span class="sr-only">(current)
 				</span></a></li>
-
-
     	</ul>
 		<ul class="navbar-nav ml-auto">
-			<li class="nav-item"><a class="nav-link" href="#">Executive</a></li>
-      		<li class="nav-item"><a class="nav-link" href="(READY)logout.php">Log Out</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Executive Name</a></li>
+      		<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
 		</ul>
     </form>
 	</div>
@@ -63,7 +61,7 @@ session_start();
 </nav>
 
     <section id="header" class="jumbotron text-center">
-        <h1 class="display-3">Reviewed Applications</h1><br>
+        <h1 class="display-3">Executive Page</h1><br>
     </section>
 
     <section id="gallery">
