@@ -2,6 +2,7 @@
     session_start();
 
     $id = $_SESSION['user'];
+    $name = $_SESSION['name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,7 +81,7 @@
 
     	</ul>
 		<ul class="navbar-nav ml-auto">
-      		<li class="nav-item"><a class="nav-link" href="(READY)logout.php">Log Out</a></li>
+      		<li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
 		</ul>
     </form>
 	</div>
@@ -97,7 +98,7 @@
     <p class="h4 mb-4">Application</p><hr><br>
 <div class="form-row mb-4">
   <div class="col">
-  <input type="text" id="defaultRegisterFormPassword" class="form-control mb-4" name="name" placeholder="Name" aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+  <input type="text" id="defaultRegisterFormPassword" class="form-control mb-4" name="name" value =" <?php  echo $name; ?>"  placeholder=" <?php  echo $name; ?>" aria-describedby="defaultRegisterFormPasswordHelpBlock" readonly>
 </div>
 <div class="col">
   <input type="number" id="defaultRegisterFormPassword" class="form-control mb-4" name="eid" value= " <?php  echo $id; ?>"placeholder="<?php echo $id; ?>" aria-describedby="defaultRegisterFormPasswordHelpBlock" readonly>
