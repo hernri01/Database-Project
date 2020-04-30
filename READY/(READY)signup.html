@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About us</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+ 
+<style>
+
+body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: rgb(144, 202, 249);
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    font-family: "Lato";
+
+
+    color: #666;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 5em;
+}
+
+input, textarea { 
+      outline: none;
+}
+
+.content{
+	padding-top: 25%;
+	text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+hr {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+p {
+margin: 20px;
+padding: 20px;
+}
+form {
+      color: black;
+      position: relative;
+      width: 90%;
+      padding: 70px;
+      border-radius: 10px;
+      background: #fff;
+}
+      
+      
+input[type=radio]:checked + label {
+        color: lightblue;
+        font-weight: bold;
+
+</style>
+ 
+</head>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">Veriform</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="http://cs.gettysburg.edu/~wilsor01/cs360/Project/(READY)landingPage.html">Home</a></li>
+          <li><a href="http://cs.gettysburg.edu/~wilsor01/cs360/Project/(READY)about.html">About</a></li>
+          <li><a href="http://cs.gettysburg.edu/~wilsor01/cs360/Project/(READY)contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://cs.gettysburg.edu/~wilsor01/cs360/Project/(READY)signup.html">Sign Up  <i class="fa fa-user-plus"></i></a></li>
+          <li><a href="http://cs.gettysburg.edu/~wilsor01/cs360/Project/(READY)login.html">Login  <i class="fa fa-user"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+         <form name="login" class="text-center border border-light p-5" method="POST" action="signup_f.php">
+
+        
+        
+                <center><h2>Sign up</h2></center> <hr> <br>
+    
+        <!--- This is basically what you need to change. Everything else is just style. -->
+        <center><h8>What is your highest position? Select one</h8></center><br>
+        
+            
+            <!-- <label class="btn btn-info"> -->
+	        <input type="radio" id="emp" name="empType" value="emp" autocomplete="off" checked = ><label for="emp">Employee</label><br>
+            <!-- <label class="btn btn-info"> -->
+            <input type="radio" id="mgr" name="empType" value="mgr" autocomplete="off"><label for="mgr">Manager</label><br>
+            <!-- <label class="btn btn-info"> -->
+            <input type="radio" id="exec" name="empType" value="exec" autocomplete="off"><label for="exec">Executive</label>
+            <br><br>
+
+            <center><input type="text" class="form-control mb-4" name="fname" size="30" placeholder="First name"/></center>
+            <br>
+
+            <center><input type="text" class="form-control mb-4" name="lname" size="30" placeholder="Last name"/></center>
+            <br>
+
+            <center><input type="text" class="form-control mb-4" name="email" size="30" placeholder="Email Address"/></center>
+            <br>
+
+            <center><input type="password" class="form-control" name="password" minlength="8" pattern="(?=.*\d).{8,}" size="30" placeholder="Password"/></center>
+            <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 8 characters and 1 digit
+            </small><br>
+            <br><a href="(FINAL)login.html">Already have an account? Login Here!  <i class="fa fa-user"></i></a><br>
+
+            <br>
+            <center><input class="btn btn-info my-4 btn-block" type='submit' value='Enter' /></center>     
+
+
+          <div class="container">  
+        </form>
+        
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+ <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
