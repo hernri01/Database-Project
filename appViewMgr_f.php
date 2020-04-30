@@ -120,7 +120,7 @@ else
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="landingPageEmp.php">Dashboard <span class="sr-only">(current)
+                            <a class="nav-link" onclick="window.history.back()">Dashboard <span class="sr-only">(current)
                             </span></a></li>
             
             
@@ -132,6 +132,8 @@ else
                 </div>
             </div>
             </nav>
+
+            
 
         <br><br>
         
