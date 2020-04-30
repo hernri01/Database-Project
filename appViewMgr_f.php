@@ -5,6 +5,8 @@ session_start();
 
 $id = $_GET['id'];
 $result = view($db, $id);
+$type = $_SESSION['type'];
+
 
 if($result == -1)
 {
@@ -120,8 +122,23 @@ else
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" onclick="window.history.back()">Dashboard <span class="sr-only">(current)
-                            </span></a></li>
+                            <?php 
+                                if($type == 'mgr')
+                                {
+                                    ?>
+                                    <a class="nav-link" href="landingPageMgr.php">Dashboard <span class="sr-only">(current)
+                                    </span></a></li>
+                                    <?php
+                                }
+                                else 
+                                {
+                                    ?>
+                                     <a class="nav-link" href="landingPageExec.php">Dashboard <span class="sr-only">(current)
+                                    </span></a></li>
+                                    <?php
+                                }
+                                
+                            ?>
             
             
                     </ul>
@@ -132,8 +149,6 @@ else
                 </div>
             </div>
             </nav>
-
-            
 
         <br><br>
         
@@ -203,10 +218,6 @@ else
                     echo "Application was approved by the Executive.";
                 }
         ?></td>
-        </tr>
-        <tr>
-        <td>Plan</td>
-        <td>Not available</td>
         </tr>
         </table>
         <!-- // Change the address of this when switching to the master webpage.-->
